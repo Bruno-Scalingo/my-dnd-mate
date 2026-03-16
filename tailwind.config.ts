@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        gold: "hsl(var(--gold))",
+        "gold-dim": "hsl(var(--gold-dim))",
+        parchment: "hsl(var(--parchment))",
+        shadow: "hsl(var(--shadow))",
+      },
+      fontFamily: {
+        display: ["Cinzel", "Georgia", "serif"],
+        body: ["Crimson Text", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +73,48 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "dice-spin": {
+          "0%": { transform: "rotate(0deg) scale(1)" },
+          "25%": { transform: "rotate(180deg) scale(1.2)" },
+          "75%": { transform: "rotate(270deg) scale(0.9)" },
+          "100%": { transform: "rotate(360deg) scale(1)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
+        "flicker": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.85" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "dice-spin": "dice-spin 0.5s ease-in-out",
+        "fade-up": "fade-up 0.4s ease-out",
+        "shimmer": "shimmer 2s linear infinite",
+        "flicker": "flicker 3s ease-in-out infinite",
+      },
+      boxShadow: {
+        "gold": "0 0 20px hsl(40 85% 55% / 0.3)",
+        "card-rpg": "0 4px 24px hsl(222 30% 4% / 0.6), inset 0 1px 0 hsl(40 50% 30% / 0.15)",
+        "inner-gold": "inset 0 1px 0 hsl(40 85% 55% / 0.2)",
+      },
+      backgroundImage: {
+        "gradient-gold": "linear-gradient(135deg, hsl(var(--gold)), hsl(35 90% 45%))",
+        "gradient-card": "linear-gradient(145deg, hsl(225 22% 11%), hsl(222 25% 8%))",
       },
     },
   },
